@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Score</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background: #FFEDD5;
+            width: 90%;
+            height: 100vh;
+            margin: auto;
+            overflow-x: hidden;
+        }
+
+        .bunting {
+            position: absolute;
+            width: 350px;
+            z-index: 1;
+        }
+
+        .left {
+            top: -70px;
+            left: -50px;
+            transform: rotate(-10deg);
+        }
+
+        .middle {
+            top: -100px;
+            left: calc(50% - 175px);
+            transform: rotate(20deg);
+        }
+
+        .right {
+            top: -80px;
+            right: -40px;
+            transform: rotate(50deg);
+        }
+
+        .notebook {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 500px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-image: url(assets/notebook.svg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 100px;
+        }
+
+        .catu {
+            position: absolute;
+            width: 200px;
+            bottom: -20px;
+            left: 100%;
+            transform: translateX(-50%);
+        }
+
+        .blacku {
+            position: absolute;
+            width: 200px;
+            bottom: 0;
+            left: 40px;
+            transform: translateX(-50%);
+        }
+
+        .star {
+            position: absolute;
+            width: 120px;
+            top: 0px;
+            left: calc(50% - 60px);
+            fill: #707070;
+            stroke: rgb(0, 0, 0);
+            stroke-width: 2px;
+        }
+
+        .leftstar {
+            width: 100px;
+            left: -90%;
+        }
+
+        .rightstar {
+            width: 100px;
+            left: 100%;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #3A3A3A;
+            margin-top: 180px;
+            font-family: oregano;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #3A3A3A;
+            font-family: "pt sans";
+            margin-top: 20px;
+        }
+
+        .btun {
+            height: 50px;
+            width: 200px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background: linear-gradient(#E2C59D, #FF9F1C);
+            border: 5px solid #FF9F1C;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: "pt sans";
+            color: #3A3A3A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 0px 20px 0 #232323;
+            justify-self: center;
+            cursor: pointer;
+            z-index: 99;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .btun:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0px 30px #3c3c3c;
+        }
+
+        @media screen and (max-width: 750px) {
+            body {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .notebook {
+                width: 90%;
+                height: 400px;
+                padding: 15px;
+            }
+
+            .bunting.middle,
+            .blacku {
+                display: none;
+            }
+
+            .bunting {
+                width: 200px;
+            }
+
+            .left {
+                top: -40px;
+                left: -30px;
+            }
+
+            .right {
+                top: -50px;
+                right: -30px;
+            }
+
+            .star {
+                width: 80px;
+                top: 30px;
+                left: calc(50% - 40px);
+            }
+
+            .leftstar {
+                width: 60px;
+                left: -75%;
+            }
+
+            .rightstar {
+                width: 60px;
+                left: 100%;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-top: 150px;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-top: 15px;
+            }
+
+            .btun {
+                height: 40px;
+                width: 160px;
+                font-size: 20px;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+
+            .catu {
+                width: 150px;
+                bottom: -10px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="assets/bunting (1).png" alt="" class="bunting left">
+    <img src="assets/bunting (1).png" alt="" class="bunting middle">
+    <img src="assets/bunting (1).png" alt="" class="bunting right">
+    <div class="notebook">
+        <div class="star">
+            <svg width="298" height="291" viewBox="0 0 298 291" fill="none" xmlns="http://www.w3.org/2000/svg" class="star leftstar">
+                <path
+                    d="M143.28 5.07418C145.048 -0.511893 152.952 -0.5119 154.72 5.07417L185.617 102.696C186.406 105.19 188.721 106.886 191.337 106.886H291.649C297.423 106.886 299.865 114.243 295.236 117.695L213.814 178.427C211.766 179.955 210.91 182.612 211.68 185.047L242.717 283.111C244.475 288.667 238.08 293.215 233.409 289.731L152.587 229.447C150.459 227.859 147.541 227.859 145.413 229.447L64.5908 289.731C59.9197 293.215 53.5248 288.667 55.2831 283.111L86.3195 185.047C87.0904 182.612 86.2344 179.955 84.1865 178.427L2.76353 117.695C-1.86486 114.243 0.576778 106.886 6.35087 106.886H106.663C109.279 106.886 111.594 105.19 112.383 102.696L143.28 5.07418Z"
+                    />
+            </svg>
+            <svg width="298" height="291" viewBox="0 0 298 291" fill="none" xmlns="http://www.w3.org/2000/svg" class="star">
+                <path
+                    d="M143.28 5.07418C145.048 -0.511893 152.952 -0.5119 154.72 5.07417L185.617 102.696C186.406 105.19 188.721 106.886 191.337 106.886H291.649C297.423 106.886 299.865 114.243 295.236 117.695L213.814 178.427C211.766 179.955 210.91 182.612 211.68 185.047L242.717 283.111C244.475 288.667 238.08 293.215 233.409 289.731L152.587 229.447C150.459 227.859 147.541 227.859 145.413 229.447L64.5908 289.731C59.9197 293.215 53.5248 288.667 55.2831 283.111L86.3195 185.047C87.0904 182.612 86.2344 179.955 84.1865 178.427L2.76353 117.695C-1.86486 114.243 0.576778 106.886 6.35087 106.886H106.663C109.279 106.886 111.594 105.19 112.383 102.696L143.28 5.07418Z"
+                    />
+            </svg>
+            <svg width="298" height="291" viewBox="0 0 298 291" fill="none" xmlns="http://www.w3.org/2000/svg" class="star rightstar">
+                <path
+                    d="M143.28 5.07418C145.048 -0.511893 152.952 -0.5119 154.72 5.07417L185.617 102.696C186.406 105.19 188.721 106.886 191.337 106.886H291.649C297.423 106.886 299.865 114.243 295.236 117.695L213.814 178.427C211.766 179.955 210.91 182.612 211.68 185.047L242.717 283.111C244.475 288.667 238.08 293.215 233.409 289.731L152.587 229.447C150.459 227.859 147.541 227.859 145.413 229.447L64.5908 289.731C59.9197 293.215 53.5248 288.667 55.2831 283.111L86.3195 185.047C87.0904 182.612 86.2344 179.955 84.1865 178.427L2.76353 117.695C-1.86486 114.243 0.576778 106.886 6.35087 106.886H106.663C109.279 106.886 111.594 105.19 112.383 102.696L143.28 5.07418Z"
+                    />
+            </svg>
+
+
+        </div>
+        <h1>Your Scored 100pts</h1>
+        <h2> 00 mins 00 secs taken</h2>
+        <a href="index.html">
+            <div class="btun">Home</div>
+        </a>
+        <a href="questions.html">
+            <div class="btun">Play Again</div>
+        </a>
+        <img src="assets/new-year.png" alt="" class="catu">
+        <img src="assets/black-cat.png" alt="" class="blacku">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let f = localStorage.getItem('finalUserData');
+        const userProfile = JSON.parse(f);
+        document.querySelector('h1').innerText = `Your Scored ${userProfile.score}pts`;
+        document.querySelector('h2').innerText = `${userProfile.mins} mins ${userProfile.secs} secs taken`;
+        let allStar = document.querySelectorAll('.star');
+        let stars = [];
+        for (let index = 1; index < 4; index++) {
+            stars.push(allStar[index])
+        }
+
+        console.log(stars);
+
+
+        if (userProfile.score >= 90) {
+            stars.forEach((star) => {
+                gsap.to(star, {
+                    duration: 0.5,
+                    fill: '#FFCD04',
+                });
+            });
+        } else if (userProfile.score >= 70) {
+
+            for (let index = 0; index < 2; index++) {
+                gsap.to(stars[index], {
+                    duration: 0.5,
+                    fill: '#FFCD04',
+                });
+            }
+        } else if (userProfile.score <= 50) {
+
+            console.log('wallah');
+
+            for (let index = 0; index < 1; index++) {
+                gsap.to(stars[index], {
+                    duration: 0.5,
+                    fill: '#FFCD04',
+                })
+            }
+        }
+
+    </script>
+</body>
+
+</html>
